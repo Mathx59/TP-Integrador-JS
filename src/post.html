@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cryptonita News</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+            <div class="container-fluid justify-content-center justify-content-md-evenly">
+                <div class="d-flex my-2 my-sm-0">
+                    <a href="/index.html"
+                        class="navbar-brand me-2 mb-1 bi-lightning-charge-fill text-warning text-decoration-none d-flex justify-content-center"
+                        id="nombreSitio">
+                    </a>
+
+                    <!-- Search form -->
+                    <form class="d-flex flex-row input-group w-auto my-auto">
+                        <input autocomplete="off" type="search" class="form-control rounded" placeholder="Buscar..."
+                            style="min-width: 125px" id="buscar" disabled>
+                        <span class="input-group-text border-0 d-none d-md-flex bg-dark"><i
+                                class="bi bi-search text-white bg-dark"></i></span>
+                    </form>
+                </div>
+
+                <ul class="navbar-nav flex-row">
+                    <!-- Avatar -->
+                    <li class="nav-item ">
+                        <a class="nav-link  d-flex align-items-center" href="/src/dashboard.html">
+                            <i class="bi bi-person-circle" style="font-size: 1.4rem; color: rgb(251, 255, 230);"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <section class="gradient-custom" id="pintarPost">
+
+    </section>
+
+    <template id="templatePost">
+        <section class="mx-auto mt-5 pt-5">
+            <div class=" container">
+                <div class="row">
+                    <div
+                        class="col-lg-9 mx-auto border-2 shadow text-center rounded-3 border-3  bg-light justify-content-center align-content-center">
+                        <div class="d-inline-flex position-relative">
+                            <span
+                                class="badge position-absolute top-100 start-50 translate-middle p-2 border border-4 rounded-2 border-light fs-6 bg-warning text-dark bg-success"
+                                id="catArticulo" style="z-index: 999999;">
+                                Bitcoin
+                            </span>
+                            <img class="img-fluid mx-auto shadow mt-4 rounded text-center" width="auto" height="auto"
+                                src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
+                                alt="" style="filter: brightness(90%)" id="imgPost">
+                        </div>
+                        <div class=" text-center mt-5">
+                            <h4 class="fw-bold mb-4 text-center" id="nombreArticulo">Titulo de la noticia</h4>
+                            <div class="cat">
+                            </div>
+                        </div>
+                        <p class="mb-2 fst-italic" id="author">
+                            <span>Autor</span>
+                        </p>
+
+                        <p class="col-lg-9 mt-5 mx-auto text-start mb-5 " id="cuerpoArticulo">
+                            Lorem, ipsum dolor sit
+                            amet
+                            consectetur
+                        </p>
+
+                        <div class="text-center">
+                            <button type="button" class="btn mt-5 mb-4 btn-outline-dark" id="volver">Volver</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-bottom:200px"></div>
+            </div>
+        </section>
+    </template>
+
+    <footer class="bg-dark text-center text-white">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            Realizado por Matt
+            <a class="text-white" href="https://github.com/Mathx59">Github</a>
+        </div>
+    </footer>
+
+    <script src="/js/post.js"></script>
+</body>
+
+</html>

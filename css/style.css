@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+body {
+  font-family: 'Roboto';
+}
+
+#navbar {
+  margin-bottom: 4rem;
+}
+
+.carousel-item {
+  padding-top: 50px;
+  max-height: 400px;
+}
+
+h5.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+#goPost {
+  font-size: 14px;
+}
+
+#textoHome {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  font-size: 14px;
+  color: #8C8C8C;
+  font-weight: 300;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.form-control {
+  border-color: transparent;
+}
+
+.input-group > .form-control:focus {
+  border-color: transparent;
+  -webkit-box-shadow: inset 0 0 0 1px transparent;
+          box-shadow: inset 0 0 0 1px transparent;
+}
+
+.modal-login {
+  width: 350px;
+}
+
+.modal-login .modal-content {
+  padding: 20px;
+  border-radius: 1px;
+  border: none;
+}
+
+.modal-login .modal-header {
+  border-bottom: none;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-login h4 {
+  text-align: center;
+  font-size: 26px;
+}
+
+.modal-login .form-group {
+  margin-bottom: 20px;
+}
+
+.modal-login .form-control, .modal-login .btn {
+  min-height: 40px;
+  font-size: 15px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.modal-login .form-control {
+  font-size: 13px;
+}
+
+.modal-login .form-control:focus {
+  border-color: #a177ff;
+}
+
+.modal-login .hint-text {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.modal-login .close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.modal-login .btn {
+  background: #a177ff;
+  border: none;
+  line-height: normal;
+}
+
+.modal-login .btn:hover, .modal-login .btn:focus {
+  background: #8753ff;
+}
+
+.modal-login .hint-text a {
+  color: #999;
+}
+
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.gradient-custom {
+  background: #667eea;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d2daff), to(#7442fd));
+  background: linear-gradient(to bottom, #d2daff, #7442fd);
+}
+
+#cuerpoArticulo{
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+}
+
+@media (max-width: 750px) {
+
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+
+}
+}
