@@ -66,7 +66,6 @@ const cargaSlider = () => {
 
   posts.forEach((item) => {
     if (item.slider) {
-      console.log(posts);
       const clone = templateSlider.cloneNode(true);
 
       clone.getElementById("imagenSlider").src = item.imagen;
@@ -77,7 +76,6 @@ const cargaSlider = () => {
     }
   });
   pintarSliderHTML.appendChild(fragment);
-  console.log("pinta el item");
 };
 
 const cargaPosts = () => {
@@ -87,7 +85,6 @@ const cargaPosts = () => {
 
   posts.forEach((item) => {
     if (!item.slider) {
-      console.log(item.slider);
       const clone = templateHome.cloneNode(true);
       clone.querySelector(".card-title").textContent = item.titulo;
       clone.getElementById("imagenArticulo").src = item.imagen;
@@ -110,36 +107,29 @@ const resetPost = () => {
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("#tituloSlider")) {
-    console.log("clic slider");
     tempId = e.target.dataset.id;
     irPost(tempId);
-    console.log(e.target.dataset.id);
   }
 });
 
 const irPost = (tempId) => {
-  console.log(tempId);
   posts.forEach((item) => {
     if (item.id === tempId) {
       item.irArticulo = true;
     }
   });
   localStorage.setItem("posts", JSON.stringify(posts));
-  console.log(posts);
-  console.log("toca boton");
   window.location.href = "/src/post.html";
 };
 
 document.addEventListener("click", (e) => {
   if (e.target.matches(".btn-outline-secondary")) {
-    console.log(e.target.dataset.id);
     tempId = e.target.dataset.id;
     irPost(tempId);
   }
 });
 
 const cargaInicial = () => {
-  console.log("cargamos inicialmente");
   fetch("./db/db.json")
     .then((response) => {
       return response.json();
@@ -150,16 +140,13 @@ const cargaInicial = () => {
         posts = JSON.parse(localStorage.getItem("posts"));
         cargaSlider();
         cargaPosts();
-        console.log(dposts);
       });
     });
 };
 
 document.addEventListener("DOMContentLoaded", (e) => {
   if (!localStorage.getItem("login")) {
-    console.log("login no existe, lo creamos");
     localStorage.setItem("login", false);
-    console.log(localStorage.getItem("login"));
   }
 
   if (!localStorage.getItem("posts")) {

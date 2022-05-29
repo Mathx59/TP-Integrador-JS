@@ -101,11 +101,9 @@ document.addEventListener("click", (e) => {
     if (document.querySelector(".form-check-input").value == "on") {
       document.querySelector(".form-check-input").value = "off";
       sliderSet = true;
-      console.log(sliderSet);
     } else {
       document.querySelector(".form-check-input").value = "on";
       sliderSet = false;
-      console.log(sliderSet);
     }
   }
 });
@@ -141,13 +139,12 @@ const borraPost = () => {
 document.addEventListener("click", (e) => {
   if (e.target.matches(".btn-outline-dark")) {
     let tempId = e.target.dataset.id;
-    console.log(tempId);
+
     borraPost();
   }
 });
 
 const cargaInicial = () => {
-  console.log("cargamos inicialmente");
   fetch("/db/db.json")
     .then((response) => {
       return response.json();
@@ -157,17 +154,14 @@ const cargaInicial = () => {
         localStorage.setItem("posts", JSON.stringify(dposts));
         posts = JSON.parse(localStorage.getItem("posts"));
         cargaPosts();
-        console.log(dposts);
       });
     });
 };
 
 document.addEventListener("DOMContentLoaded", (e) => {
   let checkLogin = localStorage.getItem("login");
-  console.log(checkLogin);
+
   if (checkLogin === "false") {
-    console.log("no esta logueado");
-    console.log(localStorage.getItem("login"));
     modalLogin.show();
   } else {
     userLogin = localStorage.getItem("user");
@@ -234,21 +228,19 @@ imgUrl.addEventListener("change", (e) => {
 
 btnModal.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(username.value);
+
   localStorage.setItem("user", username.value);
   userLogin = localStorage.getItem("user");
   localStorage.setItem("login", true);
   document.getElementById("saludo").textContent =
     "¡Bienvenido " + userLogin + "!";
   modalLogin.hide();
-  console.log(localStorage.getItem("login"));
 });
 
 formulario.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (!titulo.value.trim() || !imgUrl.value.trim() || !cuerpo.value.trim()) {
-    console.log("Error, uno o más campos vacíos");
     return;
   }
   if (!regImgUrl.test(imgUrl.value)) {
@@ -269,7 +261,7 @@ formulario.addEventListener("submit", (e) => {
     slider: sliderSet,
     id: `${Date.now()}`,
   };
-  console.log(objetoPost);
+
   procesarFormulario(objetoPost);
 
   let toastElList = [].slice.call(document.querySelectorAll(".toast"));
@@ -277,5 +269,4 @@ formulario.addEventListener("submit", (e) => {
     return new bootstrap.Toast(toastEl);
   });
   toastList.forEach((toast) => toast.show());
-  console.log(toastList);
 });

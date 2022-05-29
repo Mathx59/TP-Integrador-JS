@@ -14,7 +14,7 @@ const buscarPost = () => {
   localStorage.setItem("posts", JSON.stringify(posts));
   pintarPostHTML.textContent = "";
   const fragment = document.createDocumentFragment();
-  console.log(posts);
+
   posts.forEach((item) => {
     if (item.irArticulo) {
       const clone = templatePost.cloneNode(true);
@@ -32,7 +32,6 @@ const buscarPost = () => {
 
 document.addEventListener("click", (e) => {
   if (e.target.matches(".btn-outline-dark")) {
-    console.log(posts);
     posts.forEach((item) => {
       if (item.irArticulo) {
         item.irArticulo = !item.irArticulo;
